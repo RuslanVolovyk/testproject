@@ -1,0 +1,6 @@
+.idea/
+target/
+out/
+ExtentReports/
+*.log
+allure-results

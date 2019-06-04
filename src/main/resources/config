@@ -1,0 +1,9 @@
+{
+  "browser.driver" : "CHROME",
+  "element.wait" :30,
+  "element.poling" :500,
+  "element.exist" :2,
+  "driver.version":2.40,
+  "parralel.tests":true,
+  "parralel.suite":false
+}
