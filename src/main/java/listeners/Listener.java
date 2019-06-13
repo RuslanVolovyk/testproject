@@ -12,22 +12,26 @@ public class Listener implements ITestListener, ISuiteListener {
 
     @Override
     public void onTestStart(ITestResult result) {
+        System.out.println(result.getName()+" test case started");
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        InitialDriver.getInstance().destroy();
+        System.out.println("The name of the testcase passed is :"+result.getName());
+        //InitialDriver.getInstance().destroy();
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
         attachScreenshot();
-        InitialDriver.getInstance().destroy();
+        System.out.println("The name of the testcase failed is :"+result.getName());
+        //  InitialDriver.getInstance().destroy();
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        InitialDriver.getInstance().destroy();
+        System.out.println("The name of the testcase Skipped is :"+result.getName());
     }
 
     @Override
@@ -44,7 +48,7 @@ public class Listener implements ITestListener, ISuiteListener {
 
     @Attachment(value = "Page screenshot", type = "image/png")
     private void attachScreenshot() {
-        WebDriver driver = InitialDriver.getInstance().driver;
+        WebDriver driver = InitialDriver.getInstance().getDriver();
         if (driver == null) {
             System.out.println("Driver not found");
         } else {
@@ -58,6 +62,6 @@ public class Listener implements ITestListener, ISuiteListener {
 
     @Override
     public void onFinish(ISuite suite) {
-        InitialDriver.getInstance().destroy();
+        //InitialDriver.getInstance().destroy();
     }
 }

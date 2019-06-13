@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Functional suite tests" verbose="1">
+<suite name="Functional suite tests" parallel="false">
+    <listeners>
+        <listener class-name="listeners.Listener"/>
+    </listeners>
     <test name="Payment tests">
         <classes>
-            <class name="uiTests.PaymentTest"/>
+            <class name="com.tinkoff.uiTests.PaymentTest"/>
+            <class name="com.tinkoff.uiTests.RegionPaymentTest"/>
+            <class name="com.tinkoff.uiTests.UrlPaymentTest"/>
         </classes>
     </test>
 </suite>

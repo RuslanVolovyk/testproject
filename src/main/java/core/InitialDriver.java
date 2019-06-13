@@ -9,6 +9,9 @@ import static utils.Base.*;
 
 public class InitialDriver extends Options {
 
+    private static ThreadLocal<InitialDriver> driverThread = new ThreadLocal<>();
+    private WebDriver driver;
+
     private InitialDriver() {
     }
 
@@ -21,11 +24,7 @@ public class InitialDriver extends Options {
         return driverThread.get();
     }
 
-    private static ThreadLocal<InitialDriver> driverThread = new ThreadLocal<>();
-
-    public WebDriver driver;
-
-    WebDriver getDriver() {
+    public WebDriver getDriver() {
         if (driver == null) {
             driver = initialDriver();
             return driver;

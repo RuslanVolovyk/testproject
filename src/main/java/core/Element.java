@@ -35,7 +35,7 @@ public class Element extends Base {
         return getWebElement(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    protected WebElement waitUntilVisible(By locator) {
+    public WebElement waitUntilVisible(By locator) {
         return getWebElement(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 

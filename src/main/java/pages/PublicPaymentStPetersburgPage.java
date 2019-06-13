@@ -8,7 +8,11 @@ import java.util.ArrayList;
 
 public class PublicPaymentStPetersburgPage  extends Element {
 
-    public By allStPeterburgPublicPayments = By.xpath("//div[@data-qa-type='payments/providersMenu']");
+    private By allStPeterburgPublicPayments = By.xpath("//div[@data-qa-type='payments/providersMenu']");
+
+    public By getAllStPeterburgPublicPayments() {
+        return allStPeterburgPublicPayments;
+    }
 
     @Step("Verify that city name is Moscow")
     public ArrayList getAllPeterburgPublicPayments(By locator) {
